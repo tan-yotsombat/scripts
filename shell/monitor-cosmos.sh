@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# This script monitors node that running cosmos sdk status, and update status via Discord webhook
+# This script monitors node that running cosmos sdk (Cosmos validator node), and update status via Discord webhook
 #
 # Arguments
 # =========
@@ -11,7 +11,9 @@
 # Usage
 # =====
 # I use this with crontab job (crond). This is example for cron job running every 15 minutes.
-# >>> 0,15,30,45 * * * * /path/to/monitor-cosmos.sh $(pidof gaiad) /mnt/c 'https://discord.com/api/webhooks/xxx/yyy'
+# >>> $ crontab -e
+# editor|SHELL=/usr/bin/sh
+#       |0,15,30,45 * * * * /path/to/monitor-cosmos.sh $(pidof gaiad) /mnt/c 'https://discord.com/api/webhooks/xxx/yyy'
 #
 # And to make the script executable, run
 # >>> $ sudo chmod +x /path/to/monitor-cosmos.sh
